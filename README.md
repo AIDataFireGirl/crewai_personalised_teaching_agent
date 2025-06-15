@@ -11,6 +11,55 @@ This project implements a personalized teaching agent using CrewAI, which create
 - Progress tracking and feedback
 - Environment variable configuration
 
+## System Flow Diagram
+
+```mermaid
+graph TD
+    A[User Input] --> B[Teaching Agent]
+    B --> C[Vector Store Setup]
+    C --> D[Document Processing]
+    D --> E[FAISS & ChromaDB]
+    
+    B --> F[Agent Creation]
+    F --> G[Subject Matter Expert]
+    F --> H[Learning Style Analyzer]
+    F --> I[Progress Tracker]
+    
+    G --> J[Task Creation]
+    H --> J
+    I --> J
+    
+    J --> K[Crew Execution]
+    K --> L[Learning Plan]
+    K --> M[Teaching Materials]
+    K --> N[Progress Tracking]
+    
+    L --> O[Final Results]
+    M --> O
+    N --> O
+    
+    subgraph "RAG Implementation"
+        C
+        D
+        E
+    end
+    
+    subgraph "Agent System"
+        F
+        G
+        H
+        I
+    end
+    
+    subgraph "Task Processing"
+        J
+        K
+        L
+        M
+        N
+    end
+```
+
 ## Setup
 
 1. Clone the repository
